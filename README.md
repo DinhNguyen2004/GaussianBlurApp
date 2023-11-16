@@ -6,54 +6,56 @@
 [![GitHub forks](https://img.shields.io/github/forks/uvipen/QuickDraw?color=orange)](https://github.com/uvipen/QuickDraw/network)
 [![GitHub license](https://img.shields.io/github/license/uvipen/QuickDraw)](https://github.com/uvipen/QuickDraw/blob/master/LICENSE)
 
-## Introduction
+## Giới thiệu
 
-Here is my python source code for QuickDraw - an online game developed by google. with my code, you could: 
-* **Run an app which you could draw in front of a camera (If you use laptop, your webcam will be used by default)**
-* **Run an app which you could draw on a canvas**
+GaussianBlurApp là một ứng dụng Python đơn giản được xây dựng bằng thư viện tkinter để tạo giao diện người dùng đồ họa và thư viện PIL (Pillow), thư viện Cv2 (OpenCV) để xử lý ảnh. Ứng dụng này cho phép người dùng tải lên một hình ảnh, áp dụng bộ lọc làm mờ Gaussian cho hình ảnh và lưu hình ảnh đã làm mờ vào thư mục cá nhân.
 
-## Camera app
-In order to use this app, you need a pen (or any object) with blue, red or green color. When the pen (object) appears in front of camera, it will be catched and highlighted by an yellow circle. When you are ready for drawing, you need to press **space** button. When you want to stop drawing, press **space** again
-Below is the demo by running the sript **camera_app.py**:
+## Demo Ứng dụng
+
+Để sử dụng ứng dụng này bạn chỉ cần chọn ảnh từ thư mục cây Treeview hiện tại của bạn, vui lòng chọn đúng định dạng ảnh nếu sai sẽ báo lỗi và chọn lại. Lựa chọn 1 trong 2 Method để làm mờ ảnh, thực hiện xong nếu bạn muốn lưu ảnh thì Click vào nút nhấn Export file để lưu lại ảnh vào Folder của bạn. Dưới đây là mẫu thực hiện:
 <p align="center">
-  <img src="demo/quickdraw.gif" width=600><br/>
-  <i>Camera app demo</i>
+  <img src="demo/GaussianBlurApp.gif" width=600><br/>
+  <i>GaussianBlurApp Demo</i>
 </p>
 
-## Drawing app
-The script and demo will be released soon
+## Yêu cầu
 
-## Dataset
-The dataset used for training my model could be found at [Quick Draw dataset] https://console.cloud.google.com/storage/browser/quickdraw_dataset/sketchrnn. Here I only picked up 20 files for 20 categories
+* **python 3.11.2**
+* **os**
+* **Tkinter** 
+* **Cv2**
+* **PIL** 
 
-## Categories:
-The table below shows 20 categories my model used:
 
-|           |           |           |           |
-|-----------|:-----------:|:-----------:|:-----------:|
-|   apple   |   book    |   bowtie  |   candle  |
-|   cloud   |    cup    |   door    | envelope  |
-|eyeglasses |  guitar   |   hammer  |    hat    |
-| ice cream |   leaf    | scissors  |   star    |
-|  t-shirt  |   pants   | lightning |    tree   |
+## Kết quả nghiên cứu
 
-## Trained models
+#### Hình 1: 
+- Trước khi chỉnh sửa:
+<img src="/images/geeks.png" width="420">
+- Sau khi chỉnh sửa:
+<img src="/images/geeks_blur.jpg" width="420">
 
-You could find my trained model at **trained_models/whole_model_quickdraw**
+#### Hình 2: 
+- Trước khi chỉnh sửa:
+<img src="/images/anime_girl.jpg" width="420">
+- Sau khi chỉnh sửa:
+<img src="/images/anime_blur.jpg" width="420">
 
-## Training
+#### Hình 3: 
+- Trước khi chỉnh sửa:
+<img src="/images/ha-long-bay-in-vietnam.jpg" width="420">
+- Sau khi chỉnh sửa:
+<img src="/images/ha_long_bay_blur.jpg" width="420">
 
-You need to download npz files corresponding to 20 classes my model used and store them in folder **data**. If you want to train your model with different list of categories, you only need to change the constant **CLASSES** at **src/config.py** and download necessary npz files. Then you could simply run **python3 train.py**
+## Thành viên nhóm
 
-## Experiments:
+***1. Đào Thị Ngọc Huyền - 207CT10093***
 
-For each class, I take the first 10000 images, and then split them to training and test sets with ratio 8:2. The training/test loss/accuracy curves for the experiment are shown below:
+***2. Trần Kiến Quốc - 207CT10281***
 
-<img src="demo/loss_accuracy_curves.png" width="800"> 
+***3. Nguyễn Huy Thông - 207CT10368***
 
-## Requirements
+***4. Trương Phong Phú - 207CT68663***
 
-* **python 3.6**
-* **cv2**
-* **pytorch** 
-* **numpy**
+***5. Nguyễn Ngọc Định - 207CT68624***
+
